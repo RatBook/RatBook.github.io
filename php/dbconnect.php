@@ -1,9 +1,13 @@
 <?php
-$host = "den1.mysql1.gear.host";
-$dbname = "rattest";
-$user = "ratbook";
-$pass = "Uf7Sz93CJ5!!";
+$servername = "den1.mysql1.gear.host";
+$username = "ratbook";
+$password = "Uf7Sz93CJ5!!";
 
-$dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-?>
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+ // Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?> 
