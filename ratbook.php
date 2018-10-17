@@ -26,7 +26,7 @@
 
 		<h2>Posts</h2>
 		<?php
-				include 'dbconnect.php';
+				include 'php/dbconnect.php';
 				$rows = $dbh->query("SELECT imgLink, postText FROM Posts");
 				foreach($rows as $row) {
 				echo $row[0];
