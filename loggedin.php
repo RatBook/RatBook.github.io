@@ -24,10 +24,14 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script
+		  src="https://code.jquery.com/jquery-3.3.1.min.js"
+		  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		  crossorigin="anonymous"></script>
 	</head>
 
 	<body>
+		<div id="main"></div>
 	<!-- NAV -->
 	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
@@ -51,8 +55,15 @@
 					</div>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-          <li><a href="register.html">Register</a></li>
-					<li><a href="customerlogin.html">Sign In</a></li>
+          	<li><a href="php/logout.php">Log Out</a></li>
+				    <li><a href="php/movie.php">Movies</a></li>
+				    <li><a href="php/memberpage.php">My Profile</a></li>
+					  <li><a>
+            <?php
+              session_start();
+              echo $_SESSION['username'];
+            ?>
+          </a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -110,6 +121,7 @@
 				<div class="caption">
 					<h5>Avengers: Infinity War</h5>
 					<p><a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 			</div>
 			<div class="col-xs-6 col-md-2">
@@ -119,6 +131,7 @@
 				<div class="caption">
 					<h5>Black Panther</h5>
 					<p><a href="https://www.youtube.com/watch?v=xjDjIWPwcPU"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 			</div>
 			<div class="col-xs-6 col-md-2">
@@ -128,6 +141,7 @@
 				<div class="caption">
 					<h5>Guardians of the Galaxy</h5>
 					<p><a href="https://www.youtube.com/watch?v=dW1BIid8Osg"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 
 			</div>
@@ -138,6 +152,7 @@
 				<div class="caption">
 					<h5>Justice League</h5>
 					<p><a href="https://www.youtube.com/watch?v=r9-DM9uBtVI"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 			</div>
 			<div class="col-xs-6 col-md-2">
@@ -147,6 +162,7 @@
 				<div class="caption">
 					<h5>One Piece: Gold</h5>
 					<p><a href="https://www.youtube.com/watch?v=BvqD6Oamf0U"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 			</div>
 			<div class="col-xs-6 col-md-2">
@@ -156,6 +172,7 @@
 				<div class="caption">
 					<h5>Wonder Woman</h5>
 					<p><a href="https://www.youtube.com/watch?v=VSB4wGIdDwo"><i class="fa fa-play-circle" aria-hidden="true"></i> Trailer</a></p>
+					<p><a href="#" class="btn btn-primary" role="button">More Info</a></p>
 				</div>
 			</div>
 		</div>
@@ -165,7 +182,6 @@
 		<div id="footer-links">
 			<div id="footer-first">
 				<ul>
-					<li><a href="adminlogin.html">Admin</a></li>
 					<li>Help</li>
 				</ul>
 			</div>
@@ -207,7 +223,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- JS Script -->
