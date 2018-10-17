@@ -26,11 +26,11 @@
 
 		<h2>Posts</h2>
 		<?php
-				include 'php/dbconnect.php';
+				include 'dbconnect.php';
 				$rows = $dbh->query("SELECT imgLink, postText FROM Posts");
 				foreach($rows as $row) {
-				echo $row[0];
-				echo $row[1];
+				echo "<img src = ""$row[0]"">";
+				echo "<h1>".$row[1]"</h1>";
 		    	}
 		    	$dbh = null;
 		?>
