@@ -12,6 +12,7 @@ FROM Users
 WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
+echo $accountNumber;
 
 try {
 	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNumber')";
