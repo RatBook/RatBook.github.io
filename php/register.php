@@ -19,7 +19,7 @@ try {
 	$_SESSION['loggedin'] = true;
 	$_SESSION['admin'] = false;
 	$_SESSION['username'] = $username;
-	header("Location: ../loggedin.php");
+	header("Location: ../ratbook.php");
 	die();
 }
 catch(PDOException $e) {
