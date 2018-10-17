@@ -13,13 +13,8 @@ WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
 
-echo $caption;
-echo $link;
-echo $accountNum;
-echo "Submit";
-
 try {
-	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNum')";
+	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNumber')";
 	$dbh->exec($sql);
 	echo "<h3>DONE</h3>";
 }
