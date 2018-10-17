@@ -5,8 +5,7 @@ $link = $_POST["link"];
 $caption = $_POST["caption"];
 $accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
 session_start();
-	$username = $_SESSION['username'];
-die();
+$username = $_SESSION['username'];
 echo $username;
 echo "Submit";
 try {
@@ -21,3 +20,4 @@ catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
 $conn = null;
+die();
