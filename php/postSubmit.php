@@ -12,7 +12,6 @@ FROM Users
 WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
-echo $accountNumber;
 
 try {
 	$dbh->exec("
