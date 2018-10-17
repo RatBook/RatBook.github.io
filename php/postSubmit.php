@@ -3,9 +3,10 @@ include_once 'dbconnect.php';
 
 $link = $_POST["link"];
 $caption = $_POST["caption"];
-$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
+
 session_start();
 $username = $_SESSION['username'];
+$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
 echo $accountNum;
 echo "Submit";
 
