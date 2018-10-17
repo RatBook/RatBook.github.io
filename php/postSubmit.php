@@ -5,9 +5,8 @@ $link = $_POST["link"];
 $caption = $_POST["caption"];
 
 session_start();
-	$username = $_SESSION['username'];
-die();
 
+$username = $_SESSION['username'];
 $accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
 echo $accountNum;
 echo "Submit";
