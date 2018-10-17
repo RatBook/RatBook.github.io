@@ -13,8 +13,8 @@ WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
 
-echo $caption
-echo $link
+echo $caption;
+echo $link;
 echo $accountNum;
 echo "Submit";
 
