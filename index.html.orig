@@ -5,10 +5,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<<<<<<< HEAD
 		<!-- TITLE -->
 		<title>RatBook</title>
 	</head>
-
+=======
 <body>
 	<h1>RatBook</h1>
 	<form name="login" action="php/dbconnect.php" method="POST">
@@ -17,7 +18,10 @@
 		<button type="submit" class="btn btn-primary">SIGN IN</button>
   	</form>
 </body>
+>>>>>>> master
+
 	<body>
+		<h1>RatBook</h1>
 		<li><a href="user.html">Sign In</a></li>
 
 		<div class="Sign up Form">
