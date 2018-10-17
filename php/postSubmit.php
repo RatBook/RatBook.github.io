@@ -3,12 +3,14 @@ include_once 'dbconnect.php';
 
 $link = $_POST["link"];
 $caption = $_POST["caption"];
-
+$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
+echo $username;
+echo "Submit";
 try {
 	session_start();
 	$_SESSION['username'] = $username;
 	die();
-	$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
+	
 	$sql = "INSERT INTO Posts (imgLink, postText, userID)
 	VALUES ('$link', '$caption', '$accountNum')";
 	$dbh->exec($sql);
