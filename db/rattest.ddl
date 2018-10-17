@@ -1,0 +1,10 @@
+use rattest;
+
+CREATE TABLE Users(
+	fname VARCHAR(30) NOT NULL, 
+	lname VARCHAR(30) NOT NULL, 
+	emailAddress VARCHAR(30) NOT NULL, 
+	username VARCHAR(30) NOT NULL, 
+	password VARCHAR(30) NOT NULL, 
+	accountNumber INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
