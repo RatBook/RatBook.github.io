@@ -6,7 +6,17 @@ session_start();
 $link = $_POST["link"];
 $caption = $_POST["caption"];
 $username = $_SESSION['username'];
-$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
+$accountNum = $dbh->query("
+SELECT accountNumber 
+FROM Users 
+WHERE username = '$username'
+");
+$accountNumber = $accountNum->fetchColumn(0);
+
+echo $caption
+echo $link
+echo $accountNum;
+echo "Submit";
 
 try {
 	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNum')";
@@ -16,3 +26,4 @@ try {
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
+$conn = null;
