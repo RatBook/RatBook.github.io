@@ -6,10 +6,12 @@ $caption = $_POST["caption"];
 
 session_start();
 	$username = $_SESSION['username'];
-	$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
-	echo $accountNum;
-	echo "Submit";
 die();
+
+$accountNum = $dbh->query("SELECT accountNumber FROM Users WHERE username = '$username'");
+echo $accountNum;
+echo "Submit";
+
 
 try {
 	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNum')";
