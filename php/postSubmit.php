@@ -15,8 +15,10 @@ $accountNumber = $accountNum->fetchColumn(0);
 echo $accountNumber;
 
 try {
-	$sql = "INSERT INTO Posts (imgLink, postText, userID) VALUES ('$link', '$caption', '$accountNumber')";
-	$dbh->exec($sql);
+	$dbh->exec("
+	INSERT INTO Posts (imgLink, postText, userID) 
+	VALUES ('$link', '$caption', '$accountNumber')
+	");
 	echo "<h3>DONE</h3>";
 }
 catch(PDOException $e) {
