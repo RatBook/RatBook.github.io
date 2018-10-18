@@ -30,13 +30,15 @@ ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
 
-$thread = "../threads/".$postNum.".html"; // or .php   
-$fh = fopen($thread, 'w'); // or die("error");  
+$thread = "../threads/".$postNum.".html";
+$fh = fopen($thread, 'w'); 
 $newPage = "
-<head>
-<img src = ".$row[0].">
-<h1>".$caption"</h1>
-</head>
+<html>
+	<head>
+		<img src = ".$row[0].">
+		<h1>".$caption."</h1>
+	</head>
+</html>
 ";   
 fwrite($fh, $newPage);
 fclose($fh);
