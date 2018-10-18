@@ -44,19 +44,18 @@
 		<ul id="postList">
 			<?php
 				include 'php/dbconnect.php';
-				$rows = $dbh->query("SELECT imgLink, postText, userID FROM Posts");
+				$rows = $dbh->query("SELECT imgLink, postText, userID FROM Posts ORDER BY postID DESC");
 
-				$index = count($rows);
-				while($index) {
+				foreach($rows as $row) {
 					$subUser = $dbh->query("
 						SELECT username 
 						FROM Users 
-						WHERE accountNumber = '$rows[$index][2]'")->fetchColumn(0);
+						WHERE accountNumber = '$row[2]'
+					")->fetchColumn(0);
 
-					echo "<li id='post' onclick=showModal('".$rows[$index][0]."')><img id='thumbnail' src =".$rows[$index][0].">";
-					echo "<h3 id='title'>".$rows[$index][1]."</h3></li>";
+					echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
+					echo "<h3 id='title'>".$row[1]."</h3></li>";
 					echo "<h3>Submitted by: ".$subUser."</h3>";
-					$index = $index - 1;
 		    	}
 		    	$dbh = null;
 
