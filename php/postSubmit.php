@@ -37,7 +37,7 @@ $newPage = "
 	<head>
 	<?php
 		session_start();
-		include 'php/dbconnect.php';
+		include '../php/dbconnect.php';
 		\$username = \$_SESSION['username'];
 
 		\$subUser = \$dbh->query(\"
