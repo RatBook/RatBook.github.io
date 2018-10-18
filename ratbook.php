@@ -17,29 +17,28 @@
 			<a href="ratbook.php"><h1 id="home">RatBook</h1></a>
 			<ul id="subRats">
 				<li>Home</li>
+				<li>Logout</li>
+				<li>Logged in as:<?php echo $_SESSION['username']; ?></li>
 			</ul>
 		</nav>
 
-		<h1>
-            <?php
-              session_start();
-			  echo $_SESSION['username'];
-			  	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-				} else {
-				echo "Log in Please";
-					die();
-				}
-			?>
-		</h1>
+		<?php
+			session_start();
+			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+			} else {
+			echo "Log in Please";
+				die();
+			}
+		?>
 
-		<h2>Submit Post</h2>
+		<h1>Submit Post</h1>
 		<form name="postSubmit" action="php/postSubmit.php" method="POST">
 			<input name="link" type="text" placeholder="Link" required>
 			<input name="caption" type="text" placeholder="Caption" required />
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form> 
 
-		<h2>Posts</h2>
+		<h1>Posts</h1>
 
 		<ul id="postList">
 			<?php
