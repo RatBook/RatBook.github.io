@@ -30,14 +30,35 @@ ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
 
-$thread = "../threads/".$postNum.".html";
+$thread = "../threads/td=".$postNum."/thread.html";
 $fh = fopen($thread, 'w'); 
 $newPage = "
 <html>
-	<head>
-		<img src = ".$row[0].">
+	<body>
+		<img src = ".$link.">
 		<h1>".$caption."</h1>
-	</head>
+		<h2>Comments</h2>
+		<form name="commentSubmit" action="commentSubmit.php" method="POST">
+			<input name="comment" type="text" placeholder="Comment" required />
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form> 
+		<?php
+			include 'php/dbconnect.php';
+			$postNum =$_GET["post"];
+			$rows = $dbh->query("SELECT comment, userID, timestamp FROM Commments WHERE postID = '$postNum' ORDER BY commentID DESC");
+			
+			foreach($rows as $row) {
+				$subUser = $dbh->query("
+					SELECT username 
+					FROM Users 
+					WHERE accountNumber = '$row[1]'
+				")->fetchColumn(0);
+				
+				echo "<h3>".$row[0]."</a></h3></li>";
+				echo "<h3> Submitted by: ".$subUser." on ".$row[2]."</h3>";
+			}
+		?>
+	</body>
 </html>
 ";   
 fwrite($fh, $newPage);
