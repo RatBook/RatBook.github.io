@@ -18,7 +18,8 @@ try {
 	INSERT INTO Posts (imgLink, postText, userID) 
 	VALUES ('$link', '$caption', '$accountNumber')
 	");
-	echo "<h3>DONE</h3>";
+	header("Location:adminpage.php");
+	die();
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";

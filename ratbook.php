@@ -23,7 +23,12 @@
 		<h1>
             <?php
               session_start();
-              echo $_SESSION['username'];
+			  echo $_SESSION['username'];
+			  	if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+				} else {
+				echo "Log in Please";
+					die();
+				}?>
             ?>
 		</h1>
 
