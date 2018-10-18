@@ -25,7 +25,7 @@
 			<ul id="subRats">
 				<li><a href="ratbook.php"><h2 id="home">RatBook</h2></a></li>
 				<li><a>Home</a></li>
-				<li><a>Logout</a></li>
+				<li><a href="php/logout.php">Logout</a></li>
 				<h1><?php echo $_SESSION['username']; ?></h1>
 				<h1>Logged in as:</h1>
 				
