@@ -8,7 +8,7 @@ $postID = $_GET['postID'];
 
 try {
 	$dbh->exec("
-	INSERT INTO Posts (comment, userID, postID) 
+	INSERT INTO Comments (comment, userID, postID) 
 	VALUES ('$comment', '$userID', '$postID')
 	");
 }
