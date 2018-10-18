@@ -34,24 +34,27 @@ $thread = "../threads/".$postNum.".php";
 $fh = fopen($thread, 'w'); 
 $newPage = "
 <html>
+	<head>
+	<?php
+		session_start();
+		include 'php/dbconnect.php';
+		\$username = \$_SESSION['username'];
+
+		\$subUser = \$dbh->query(\"
+					SELECT username 
+					FROM Users 
+					WHERE accountNumber = '\$username'
+		\")->fetchColumn(0);
+
+		\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
+	?>
+	<title>".$caption."</title>
+	</head>
 	<body>
 		<img src = '".$link."'>
 		<h1>".$caption."</h1>
 		<h2>Comments</h2>
-		<?php
-			session_start();
-			include 'php/dbconnect.php';
-			\$username = \$_SESSION['username'];
 
-			\$subUser = \$dbh->query(\"
-						SELECT username 
-						FROM Users 
-						WHERE accountNumber = '\$username'
-			\")->fetchColumn(0);
-
-			\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
-		?>
-		
 		<form name='commentSubmit' action='<?php echo \$url ?>' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
 			<button type='submit' class='btn btn-primary'>Submit</button>
