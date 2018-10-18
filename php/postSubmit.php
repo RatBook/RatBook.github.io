@@ -12,16 +12,16 @@ FROM Users
 WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
+header("Location:adminpage.php");
 
 try {
 	$dbh->exec("
 	INSERT INTO Posts (imgLink, postText, userID) 
 	VALUES ('$link', '$caption', '$accountNumber')
 	");
-	header("Location:adminpage.php");
-	die();
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
 $conn = null;
+die();
