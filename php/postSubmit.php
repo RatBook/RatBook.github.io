@@ -52,7 +52,7 @@ $newPage = "
 					WHERE username = '\$username'
 		\")->fetchColumn(0);
 
-		\$url = \"../php/commentSubmit.php?postID=\" . urlencode(".$postNum.") . \"&userID\" . urlencode(\$subUser);
+		\$url = \"../php/commentSubmit.php?postID=\" . urlencode(".$postNum.") . \"&userID=\" . urlencode(\$subUser);
 		echo \$url 
 		?>' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
