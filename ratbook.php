@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="css/subRat.css" />
 
 		<!-- TITLE -->
-		<title>RatBookTing</title>
+		<title>RatBook</title>
 	</head>
 
 	<body>
@@ -55,14 +55,14 @@
 						WHERE accountNumber = '$row[2]'
 					")->fetchColumn(0);
 					
-					$url = "threads/" . $row[4] . ".html";
+					$url = "threads/" . $row[4] . ".html?postID=" . $row[4];
 					echo "<li id='post' onclick=showModal('".$row[0]."')>
 							<img id='thumbnail' src =".$row[0]." onerror=\"this.src='https://i.imgur.com/JRTfZzG.png'\"
 							 >";
 					echo "
-					<h3 id='title'><form action = '".$url."'><input type = 'hidden' name = 'post' value = '".$row[1]."' />".$row[1]."</form></h3></li>
+					<h3 id='title'><a href = '".$url."'>".$row[1]."</a></h3></li>
 					";
-					echo "<h3>Submitted by:penisTest ".$subUser." on ".$row[3]."</h3>";
+					echo "<h3>Submitted by: ".$subUser." on ".$row[3]."</h3>";
 		    	}
 		    	$dbh = null;
 
