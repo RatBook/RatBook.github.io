@@ -13,6 +13,12 @@
 
 }
 
+#defaultThumb{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
 #thumbnail{
 	padding: 10px;
 	width: 100px;
