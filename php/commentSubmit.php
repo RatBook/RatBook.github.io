@@ -3,8 +3,8 @@ include_once 'dbconnect.php';
 session_start();
 
 $comment = $_POST["comment"];
-$userID = $_GET['userID']);
-$postID = $_GET['postID']);
+$userID = $_GET['userID'];
+$postID = $_GET['postID'];
 
 try {
 	$dbh->exec("
