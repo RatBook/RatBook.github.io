@@ -21,7 +21,7 @@ try {
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
-
+/*
 $postNum = $dbh->query("
 SELECT postID
 FROM Posts 
@@ -42,7 +42,7 @@ $newPage = "
 ";   
 fwrite($fh, $newPage);
 fclose($fh);
-
+*/
 header("Location:../threads/".$postNum.".html");
 $conn = null;
 die();
