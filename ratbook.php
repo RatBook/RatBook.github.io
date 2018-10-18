@@ -14,7 +14,7 @@
 
 	<body>
 		<nav>
-			<h1 id="home">RatBook</h1>
+			<a href="ratbook.php"><h1 id="home">RatBook</h1></a>
 			<ul id="subRats">
 				<li>Home</li>
 			</ul>
@@ -41,12 +41,29 @@
 				include 'php/dbconnect.php';
 				$rows = $dbh->query("SELECT imgLink, postText FROM Posts");
 				foreach($rows as $row) {
-				echo "<li id='post'><img id='thumbnail' src =".$row[0].">";
+				echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
 				echo "<h3 id='title'>".$row[1]."</h3></li>";
 		    	}
 		    	$dbh = null;
+
+
+		    	echo
+		    		'
+		    		<button id="myBtn">Open Modal</button>
+		    		<div id="myModal" class="modal">
+
+					  <!-- Modal content -->
+					  <div class="modal-content">
+					  	<img id="modal-img" />
+					    <span class="close">&times;</span>
+					    <p>Some text in the Modal..</p>
+					  </div>
+
+					</div>'
+		    	;
 			?>
 		</ul>
 
 	</body>
+	<script src="js/post.js"></script>
 </html>
