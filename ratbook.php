@@ -4,7 +4,7 @@
 		session_start();
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 		} else {
-		echo "Log in Please";
+		echo "<a href='index.html'>Log in Please</a>";
 			die();
 		}
 	?>
@@ -46,7 +46,7 @@
 		<ul id="postList">
 			<?php
 				include 'php/dbconnect.php';
-				$rows = $dbh->query("SELECT imgLink, postText, userID FROM Posts ORDER BY postID DESC");
+				$rows = $dbh->query("SELECT imgLink, postText, userID, timestamp FROM Posts ORDER BY postID DESC");
 
 				foreach($rows as $row) {
 					$subUser = $dbh->query("
@@ -57,7 +57,7 @@
 
 					echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
 					echo "<h3 id='title'>".$row[1]."</h3></li>";
-					echo "<h3>Submitted by: ".$subUser."</h3>";
+					echo "<h3>Submitted by: ".$subUser." on ".$row[3]."</h3>";
 		    	}
 		    	$dbh = null;
 
