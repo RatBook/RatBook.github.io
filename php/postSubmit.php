@@ -12,7 +12,7 @@ FROM Users
 WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
-header("Location:adminpage.php");
+header("Location:../ratbook.php");
 
 try {
 	$dbh->exec("
