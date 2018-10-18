@@ -61,8 +61,8 @@ $newPage = "
 
 		<?php
 			\$postNum = \$_GET['postID'];
-			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Commments WHERE postID = '".$postNum."' ORDER BY commentID DESC\");
-			
+			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Comments WHERE postID = '".$postNum."' ORDER BY commentID DESC\");
+
 			foreach(\$rows as \$row) {
 				\$subUser = \$dbh->query(\"
 					SELECT username 
