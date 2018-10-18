@@ -38,24 +38,13 @@ $newPage = "
 		<img src = '".$link."'>
 		<h1>".$caption."</h1>
 		<h2>Comments</h2>
-		<?php
-			session_start();
-			include 'php/dbconnect.php';
-
-
-			\$subUser = \$dbh->query(\"
-						SELECT username 
-						FROM Users 
-						WHERE accountNumber = '\$_SESSION['username']'
-			\")->fetchColumn(0);
-
-			\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
-		?>
 		<form name='commentSubmit' action='../php/commentSubmit.php' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
 			<button type='submit' class='btn btn-primary'>Submit</button>
 		</form> 
 		<?php
+			session_start();
+			include 'php/dbconnect.php';
 			\$postNum = \$_GET['post'];
 			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Commments WHERE postID = '.\$postNum.' ORDER BY commentID DESC\");
 			
