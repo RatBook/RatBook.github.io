@@ -5,11 +5,20 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		<link rel="stylesheet" href="css/ratbook.css" />
+
 		<!-- TITLE -->
 		<title>RatBook</title>
 	</head>
 
 	<body>
+		<nav>
+			<h1 id="home">RatBook</h1>
+			<ul id="subRats">
+				<li>Home</li>
+			</ul>
+		</nav>
+
 		<h1>
             <?php
               session_start();
