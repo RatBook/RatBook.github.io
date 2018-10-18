@@ -28,8 +28,8 @@
 				} else {
 				echo "Log in Please";
 					die();
-				}?>
-            ?>
+				}
+			?>
 		</h1>
 
 		<h2>Submit Post</h2>
