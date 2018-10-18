@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link rel="stylesheet" href="css/ratbook.css" />
+		<link rel="stylesheet" href="css/subRat.css" />
 
 		<!-- TITLE -->
 		<title>RatBook</title>
@@ -34,14 +35,18 @@
 		</form> 
 
 		<h2>Posts</h2>
-		<?php
+
+		<ul id="postList">
+			<?php
 				include 'php/dbconnect.php';
 				$rows = $dbh->query("SELECT imgLink, postText FROM Posts");
 				foreach($rows as $row) {
-				echo "<img src =".$row[0].">";
-				echo "<h3>".$row[1]."</h3>";
+				echo "<li id='post'><img id='thumbnail' src =".$row[0].">";
+				echo "<h3 id='title'>".$row[1]."</h3></li>";
 		    	}
 		    	$dbh = null;
-		?>
+			?>
+		</ul>
+
 	</body>
 </html>
