@@ -44,18 +44,18 @@ $newPage = "
 		</form> 
 		<?php
 			include 'php/dbconnect.php';
-			$postNum = $_GET['post'];
-			$rows = $dbh->query('SELECT comment, userID, timestamp FROM Commments WHERE postID = '$postNum' ORDER BY commentID DESC');
+			\$postNum = \$_GET['post'];
+			\$rows = \$dbh->query('SELECT comment, userID, timestamp FROM Commments WHERE postID = '\$postNum' ORDER BY commentID DESC');
 			
-			foreach($rows as $row) {
-				$subUser = $dbh->query('
+			foreach(\$rows as \$row) {
+				\$subUser = \$dbh->query('
 					SELECT username 
 					FROM Users 
-					WHERE accountNumber = '$row[1]'
+					WHERE accountNumber = '\$row[1]'
 				')->fetchColumn(0);
 				
-				echo '<h3>'.$row[0].'</a></h3></li>';
-				echo '<h3> Submitted by: '.$subUser.' on '.$row[2].'</h3>';
+				echo '<h3>'.\$row[0].'</a></h3></li>';
+				echo '<h3> Submitted by: '.\$subUser.' on '.\$row[2].'</h3>';
 			}
 		?>
 	</body>
