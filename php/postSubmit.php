@@ -41,12 +41,12 @@ $newPage = "
 		<?php
 			session_start();
 			include 'php/dbconnect.php';
-
+			\$username = \$_SESSION['username']
 
 			\$subUser = \$dbh->query(\"
 						SELECT username 
 						FROM Users 
-						WHERE accountNumber = '\$_SESSION['username']'
+						WHERE accountNumber = '\$username'
 			\")->fetchColumn(0);
 
 			\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
