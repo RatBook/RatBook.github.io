@@ -18,9 +18,11 @@ try {
 	INSERT INTO Posts (imgLink, postText, userID) 
 	VALUES ('$link', '$caption', '$accountNumber')
 	");
-	echo "<h3>DONE</h3>";
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
+
+header("Location:../ratbook.php");
 $conn = null;
+die();
