@@ -54,7 +54,6 @@
 
 		    	echo
 		    		'
-		    		<button id="myBtn">Open Modal</button>
 		    		<div id="myModal" class="modal">
 
 					  <!-- Modal content -->

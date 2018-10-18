@@ -9,7 +9,6 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal 
 function showModal(url) {
-	console.log(url)
     modal.style.display = "block";
     document.getElementById("modal-img").src = url;
 }
