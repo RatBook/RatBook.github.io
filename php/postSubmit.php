@@ -60,7 +60,7 @@ $newPage = "
 		</form> 
 
 		<?php
-			\$postNum = \$_GET['post'];
+			\$postNum = \$_GET['postID'];
 			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Commments WHERE postID = '.\$postNum.' ORDER BY commentID DESC\");
 			
 			foreach(\$rows as \$row) {
