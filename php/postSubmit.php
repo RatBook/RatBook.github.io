@@ -51,10 +51,12 @@ $newPage = "
 
 			\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
 		?>
-		<form name='commentSubmit' action='../php/commentSubmit.php' method='POST'>
+		
+		<form name='commentSubmit' action='<?php echo \$url ?>' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
 			<button type='submit' class='btn btn-primary'>Submit</button>
 		</form> 
+
 		<?php
 			\$postNum = \$_GET['post'];
 			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Commments WHERE postID = '.\$postNum.' ORDER BY commentID DESC\");
