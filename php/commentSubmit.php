@@ -14,6 +14,7 @@ try {
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
+	die();
 }
 
 header("Location:../threads/".$postID.".php");
