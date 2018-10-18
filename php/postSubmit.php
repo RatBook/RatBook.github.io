@@ -30,7 +30,6 @@ ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
 
-
 $thread = "../threads/".$postNum.".html";
 $fh = fopen($thread, 'w'); 
 $newPage = "
@@ -44,6 +43,6 @@ $newPage = "
 fwrite($fh, $newPage);
 fclose($fh);
 
-header("Location:../threads/".$postNum.".html");
+header("Location:../ratbook.php");
 $conn = null;
 die();
