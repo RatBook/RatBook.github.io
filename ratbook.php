@@ -27,7 +27,7 @@
 				<li><a>Home</a></li>
 				<li><a href="php/logout.php">Logout</a></li>
 				<h1><?php echo $_SESSION['username']; ?></h1>
-				<h1>Logged in as:</h1>
+				<h1>Logged in as: </h1>
 				
 			</ul>
 		</nav>
