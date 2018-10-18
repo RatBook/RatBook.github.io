@@ -51,6 +51,7 @@
 				WHERE accountNumber = '$row[2]'
 				")->fetchColumn(0);
 
+				echo $subUser;
 				foreach($rows as $row) {
 				echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
 				echo "<h3 id='title'>".$row[1]."</h3></li>";
