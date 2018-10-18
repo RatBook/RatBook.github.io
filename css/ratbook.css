@@ -34,9 +34,7 @@ nav{
 	display: inline-block;
 	cursor: pointer;
 	font-family: Helvetica;
-	padding-left: 30px;
-	padding-right: 30px;
-	border: none;
+	border: none !important;
 }
 
 #subRats{
