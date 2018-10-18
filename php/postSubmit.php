@@ -10,13 +10,12 @@ $accountNum = $dbh->query("
 SELECT accountNumber 
 FROM Users 
 WHERE username = '$username'
-");
-$accountNumber = $accountNum->fetchColumn(0);
+");->fetchColumn(0);
 
 try {
 	$dbh->exec("
 	INSERT INTO Posts (imgLink, postText, userID) 
-	VALUES ('$link', '$caption', '$accountNumber')
+	VALUES ('$link', '$caption', '$accountNum')
 	");
 }
 catch(PDOException $e) {
