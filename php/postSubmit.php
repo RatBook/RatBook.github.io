@@ -54,8 +54,8 @@ $newPage = "
 					WHERE accountNumber = '\$row[1]'
 				')->fetchColumn(0);
 				
-				echo '<h3>"'.\$row[0].'"</a></h3></li>';
-				echo '<h3> Submitted by: "'.\$subUser.'" on "'.\$row[2].'"</h3>';
+				echo '<h3>'.\$row[0].'</a></h3></li>';
+				echo '<h3> Submitted by: '.\$subUser.' on '.\$row[2].'</h3>';
 			}
 		?>
 	</body>
