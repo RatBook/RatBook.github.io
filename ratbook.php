@@ -55,7 +55,7 @@
 						WHERE accountNumber = '$row[2]'
 					")->fetchColumn(0);
 					
-					$url = "threads/" . $row[4] . ".html?postID=" . $row[4];
+					$url = "threads/" . $row[4] . ".php?postID=" . $row[4];
 					echo "<li id='post' onclick=showModal('".$row[0]."')>
 							<img id='thumbnail' src =".$row[0]." onerror=\"this.src='https://i.imgur.com/JRTfZzG.png'\"
 							 >";

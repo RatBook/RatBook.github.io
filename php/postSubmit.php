@@ -30,7 +30,7 @@ ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
 
-$thread = "../threads/".$postNum.".html";
+$thread = "../threads/".$postNum.".php";
 $fh = fopen($thread, 'w'); 
 $newPage = "
 <html>
@@ -45,7 +45,7 @@ $newPage = "
 		<?php
 			include 'php/dbconnect.php';
 			\$postNum = \$_GET['post'];
-			\$rows = \$dbh->query('SELECT comment, userID, timestamp FROM Commments WHERE postID = '\$postNum' ORDER BY commentID DESC');
+			\$rows = \$dbh\->query('SELECT comment, userID, timestamp FROM Commments WHERE postID = '\$postNum' ORDER BY commentID DESC');
 			
 			foreach(\$rows as \$row) {
 				\$subUser = \$dbh->query('
