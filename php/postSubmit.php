@@ -22,6 +22,22 @@ catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
 
-header("Location:../ratbook.php");
+$postNum = $dbh->query("
+SELECT postID
+FROM Posts 
+WHERE imgLink = '$link'
+")->fetchColumn(0);
+
+$thread = "../threads/".$postNum.".html"; // or .php   
+$fh = fopen($thread, 'w'); // or die("error");  
+$newPage = "
+<head>
+Hello this is a testboy)
+</head>
+";   
+fwrite($fh, $newPage);
+fclose($fh);
+
+header("Location:../threads/".$postNum.".html");
 $conn = null;
 die();
