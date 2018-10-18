@@ -24,10 +24,10 @@
 		<nav>
 			<a href="ratbook.php"><h1 id="home">RatBook</h1></a>
 			<ul id="subRats">
-				<li>Home</li>
-				<li>Logout</li>
-				<li>Logged in as:</li>
-				<li><?php echo $_SESSION['username']; ?></li>
+				<li><a>Home</a></li>
+				<li><a>Logout</a></li>
+				<h1>Logged in as:</h1><
+				<h1><?php echo $_SESSION['username']; ?></h1>
 			</ul>
 		</nav>
 
