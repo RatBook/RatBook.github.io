@@ -3,68 +3,20 @@ include_once 'dbconnect.php';
 
 session_start();
 
-$link = $_POST["link"];
-$caption = $_POST["caption"];
-$username = $_SESSION['username'];
-$accountNum = $dbh->query("
-SELECT accountNumber 
-FROM Users 
-WHERE username = '$username'
-")->fetchColumn(0);
+$comment = $_POST["comment"];
+$userID = $_GET['userID'];
+$postID = $_GET['postID'];
 
 try {
 	$dbh->exec("
-	INSERT INTO Posts (imgLink, postText, userID) 
-	VALUES ('$link', '$caption', '$accountNum')
+	INSERT INTO Posts (comment, userID, postID) 
+	VALUES ('$comment', '$userID', '$postID')
 	");
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
 
-$postNum = $dbh->query("
-SELECT postID
-FROM Posts 
-WHERE imgLink = '$link' 
-ORDER BY postID DESC
-LIMIT 1
-")->fetchColumn(0);
-
-$thread = "../threads/".$postNum.".php";
-$fh = fopen($thread, 'w'); 
-$newPage = "
-<html>
-	<body>
-		<img src = '".$link."'>
-		<h1>".$caption."</h1>
-		<h2>Comments</h2>
-		<form name='commentSubmit' action='../php/commentSubmit.php' method='POST'>
-			<input name='comment' type='text' placeholder='Comment' required />
-			<button type='submit' class='btn btn-primary'>Submit</button>
-		</form> 
-		<?php
-			session_start();
-			include 'php/dbconnect.php';
-			\$postNum = \$_GET['post'];
-			\$rows = \$dbh->query(\"SELECT comment, userID, timestamp FROM Commments WHERE postID = '.\$postNum.' ORDER BY commentID DESC\");
-			
-			foreach(\$rows as \$row) {
-				\$subUser = \$dbh->query(\"
-					SELECT username 
-					FROM Users 
-					WHERE accountNumber = '\$row[1]'
-				\")->fetchColumn(0);
-				
-				echo '<h3>'.\$row[0].'</a></h3></li>';
-				echo '<h3> Submitted by: '.\$subUser.' on '.\$row[2].'</h3>';
-			}
-		?>
-	</body>
-</html>
-";   
-fwrite($fh, $newPage);
-fclose($fh);
-
-header("Location:../ratbook.php");
+header("Location:../threads/".$postID.".php");
 $conn = null;
 die();
