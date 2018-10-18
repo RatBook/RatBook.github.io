@@ -30,13 +30,13 @@ ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
 
-$thread = "../threads/td=".$postNum."/thread.html";
+$thread = "../threads/".$postNum.".html";
 $fh = fopen($thread, 'w'); 
 $newPage = "
 <html>
 	<body>
-		<img src = '$link'>
-		<h1>'$caption'</h1>
+		<img src = '".$link."'>
+		<h1>'".$caption."'</h1>
 		<h2>Comments</h2>
 		<form name='commentSubmit' action='commentSubmit.php' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
@@ -54,8 +54,8 @@ $newPage = "
 					WHERE accountNumber = '$row[1]'
 				')->fetchColumn(0);
 				
-				echo '<h3>'.$row[0]."</a></h3></li>";
-				echo '<h3> Submitted by: '.$subUser.' on '.$row[2].'</h3>'';
+				echo '<h3>'.$row[0].'</a></h3></li>';
+				echo '<h3> Submitted by: '.$subUser.' on '.$row[2].'</h3>';
 			}
 		?>
 	</body>
