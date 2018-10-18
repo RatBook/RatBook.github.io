@@ -22,8 +22,8 @@
 
 	<body>
 		<nav>
-			<a href="ratbook.php"><h1 id="home">RatBook</h1></a>
 			<ul id="subRats">
+				<li><a href="ratbook.php"><h1 id="home">RatBook</h1></a></li>
 				<li><a>Home</a></li>
 				<li><a>Logout</a></li>
 				<h1>Logged in as:</h1><
