@@ -21,7 +21,7 @@ try {
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
-/*
+
 $postNum = $dbh->query("
 SELECT postID
 FROM Posts 
@@ -29,7 +29,7 @@ WHERE imgLink = '$link'
 ORDER BY postID DESC
 LIMIT 1
 ")->fetchColumn(0);
-
+/*
 $thread = "../threads/".$postNum.".html";
 $fh = fopen($thread, 'w'); 
 $newPage = "
