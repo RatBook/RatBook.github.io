@@ -6,7 +6,6 @@ session_start();
 $link = $_POST["link"];
 $caption = $_POST["caption"];
 $username = $_SESSION['username'];
-echo $username;
 $accountNum = $dbh->query("
 SELECT accountNumber 
 FROM Users 
@@ -24,5 +23,6 @@ catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
 
+header("Location:../ratbook.php");
 $conn = null;
 die();
