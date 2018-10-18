@@ -14,6 +14,9 @@ try {
 }
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
+	echo $comment;
+	echo $userID;
+	echo $postID;
 	die();
 }
 
