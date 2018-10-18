@@ -46,7 +46,7 @@
 		<ul id="postList">
 			<?php
 				include 'php/dbconnect.php';
-				$rows = $dbh->query("SELECT imgLink, postText, userID, timestamp FROM Posts ORDER BY postID DESC");
+				$rows = $dbh->query("SELECT imgLink, postText, userID, timestamp, postID FROM Posts ORDER BY postID DESC");
 
 				foreach($rows as $row) {
 					$subUser = $dbh->query("
@@ -56,7 +56,7 @@
 					")->fetchColumn(0);
 
 					echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
-					echo "<h3 id='title'>".$row[1]."</h3></li>";
+					echo "<h3 id='title'><a href = ".$row[4].">".$row[1]."</a></h3></li>";
 					echo "<h3>Submitted by: ".$subUser." on ".$row[3]."</h3>";
 		    	}
 		    	$dbh = null;
