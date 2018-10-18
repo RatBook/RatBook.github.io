@@ -26,7 +26,7 @@
 				<li><a href="ratbook.php"><h1 id="home">RatBook</h1></a></li>
 				<li><a>Home</a></li>
 				<li><a>Logout</a></li>
-				<h1>Logged in as:</h1><
+				<h1>Logged in as:</h1>
 				<h1><?php echo $_SESSION['username']; ?></h1>
 			</ul>
 		</nav>
