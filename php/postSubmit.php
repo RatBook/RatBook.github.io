@@ -12,7 +12,6 @@ FROM Users
 WHERE username = '$username'
 ");
 $accountNumber = $accountNum->fetchColumn(0);
-header("Location:../ratbook.php");
 
 try {
 	$dbh->exec("
@@ -23,5 +22,6 @@ try {
 catch(PDOException $e) {
 	echo "<h3>FAIL</h3>";
 }
+header("Location:../ratbook.php");
 $conn = null;
 die();
