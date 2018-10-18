@@ -41,7 +41,7 @@ $newPage = "
 		<?php
 			session_start();
 			include 'php/dbconnect.php';
-			\$username = \$_SESSION['username']
+			\$username = \$_SESSION['username'];
 
 			\$subUser = \$dbh->query(\"
 						SELECT username 
