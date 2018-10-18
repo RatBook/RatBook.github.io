@@ -57,7 +57,7 @@
 					
 					$url = "threads/" . $row[4];
 					echo "<li id='post' onclick=showModal('".$row[0]."')><img id='thumbnail' src =".$row[0].">";
-					echo "<h3 id='title'><a href = ".$url.">".$row[1]."</a></h3></li>";
+					echo "<h3 id='title'><a href = '".$url."'>".$row[1]."</a></h3></li>";
 					echo "<h3>Submitted by: ".$subUser." on ".$row[3]."</h3>";
 		    	}
 		    	$dbh = null;
