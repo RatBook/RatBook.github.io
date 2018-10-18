@@ -1,11 +1,10 @@
 <?php
 include_once 'dbconnect.php';
-
 session_start();
 
 $comment = $_POST["comment"];
-$userID = urldecode($_GET['userID']);
-$postID = urldecode($_GET['postID']);
+$userID = $_GET['userID']);
+$postID = $_GET['postID']);
 
 try {
 	$dbh->exec("

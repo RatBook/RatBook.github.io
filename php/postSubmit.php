@@ -47,12 +47,12 @@ $newPage = "
 		\$username = \$_SESSION['username'];
 
 		\$subUser = \$dbh->query(\"
-					SELECT username 
+					SELECT accountNumber 
 					FROM Users 
-					WHERE accountNumber = '\$username'
+					WHERE username = '\$username'
 		\")->fetchColumn(0);
 
-		\$url = \"../php/commentSubmit.php?postID=\" . urlencode(\$row[4]) . \"&userID\" . urlencode(\$userID);
+		\$url = \"../php/commentSubmit.php?postID=\" . urlencode(".$postNum.") . \"&userID\" . urlencode(\$subUser);
 		echo \$url 
 		?>' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />
