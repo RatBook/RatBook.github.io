@@ -15,7 +15,7 @@ WHERE username = '$username'
 try {
 	$dbh->exec("
 	INSERT INTO Posts (imgLink, postText, userID) 
-	VALUES ('$link', '$caption', '$accountNumber')
+	VALUES ('$link', '$caption', '$accountNum')
 	");
 }
 catch(PDOException $e) {
