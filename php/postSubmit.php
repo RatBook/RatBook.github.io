@@ -36,7 +36,7 @@ $newPage = "
 <html>
 	<body>
 		<img src = '".$link."'>
-		<h1>'".$caption."'</h1>
+		<h1>".$caption."</h1>
 		<h2>Comments</h2>
 		<form name='commentSubmit' action='commentSubmit.php' method='POST'>
 			<input name='comment' type='text' placeholder='Comment' required />

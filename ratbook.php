@@ -60,7 +60,7 @@
 							<img id='thumbnail' src =".$row[0]." onerror=\"this.src='https://i.imgur.com/JRTfZzG.png'\"
 							 >";
 					echo "
-					<h3 id='title'><a href = '".$url."'><input type = 'hidden' name = 'post' value = '".$row[1]."' />".$row[1]."</form></a></h3></li>
+					<h3 id='title'><form action = '".$url."'><input type = 'hidden' name = 'post' value = '".$row[1]."' />".$row[1]."</form></h3></li>
 					";
 					echo "<h3>Submitted by: ".$subUser." on ".$row[3]."</h3>";
 		    	}
