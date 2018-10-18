@@ -1,0 +1,31 @@
+body{
+}
+
+#head{
+	text-align: center;
+	font-family: Helvetica;
+}
+
+#signin{
+	width: 50%;
+	float:left;
+	text-align: center;
+}
+
+#signup{
+	width: 50%;
+	float:left;
+	text-align: center;
+}
+
+#vid1{
+	width: 50%;
+	text-align: center;
+	float:left;
+}	
+
+#vid2{
+	width: 50%;
+	text-align: center;
+	float:left;
+}
