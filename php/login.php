@@ -16,5 +16,5 @@ if($count==1){
     header("Location: ../ratbook.php");
     die();;
 } else {
-  echo "Fail";
+  echo "<a href='index.html'>Failed Try Again</a>";
 }
