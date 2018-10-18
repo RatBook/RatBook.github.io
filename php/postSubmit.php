@@ -43,6 +43,7 @@ $newPage = "
 			<button type='submit' class='btn btn-primary'>Submit</button>
 		</form> 
 		<?php
+			session_start();
 			include 'php/dbconnect.php';
 			\$postNum = \$_GET['post'];
 			\$rows = \$dbh->query('SELECT comment, userID, timestamp FROM Commments WHERE postID = '\$postNum' ORDER BY commentID DESC');
