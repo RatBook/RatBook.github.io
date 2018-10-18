@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+	<?php
+		session_start();
+		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+		} else {
+		echo "Log in Please";
+			die();
+		}
+	?>
   	<head>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -23,14 +31,7 @@
 			</ul>
 		</nav>
 
-		<?php
-			session_start();
-			if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-			} else {
-			echo "Log in Please";
-				die();
-			}
-		?>
+		
 
 		<h1>Submit Post</h1>
 		<form name="postSubmit" action="php/postSubmit.php" method="POST">
