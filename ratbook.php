@@ -18,7 +18,8 @@
 			<ul id="subRats">
 				<li>Home</li>
 				<li>Logout</li>
-				<li>Logged in as:<?php echo $_SESSION['username']; ?></li>
+				<li>Logged in as:</li>
+				<li><?php echo $_SESSION['username']; ?></li>
 			</ul>
 		</nav>
 
