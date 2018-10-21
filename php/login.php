@@ -14,7 +14,7 @@ if($count==1){
     $_SESSION['admin'] = false;
     $_SESSION['username'] = $username;
     header("Location: ../ratbook.php");
-    die();;
+    die();
 } else {
   echo "<a href='index.html'>Failed Try Again</a>";
 }
