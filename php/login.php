@@ -3,7 +3,7 @@ include_once 'dbconnect.php';
 
 $username=$_POST['username'];
 $password=$_POST['password'];
-
+/*
 $sql="SELECT * FROM Users WHERE username='$username' and password='$password'";
 $result=$dbh->query($sql);
 $count=$result->rowCount();
@@ -18,4 +18,5 @@ if($count==1){
 } else {
   echo "<a href='index.html'>Failed Try Again</a>";
 }
+*/
 ?>
