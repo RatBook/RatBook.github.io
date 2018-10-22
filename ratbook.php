@@ -21,18 +21,37 @@
 	</head>
 
 	<body>
+	<script>
+	function checkNotifications() {
+		xmlhttp.open("GET", "getNotifs.php?u="+ str, true);
+		xmlhttp.send();
+		
+		if (str.length == 0) { 
+			document.getElementById("txtHint").innerHTML = "";
+			return;
+		} else {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("txtHint").innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("GET", "gethint.php?q=" + str, true);
+			xmlhttp.send();
+		}
+	}
+	</script>
 		<nav>
 			<ul id="subRats">
 				<li><a href="ratbook.php"><h2 id="home">RatBook</h2></a></li>
 				<li><a>Home</a></li>
 				<li><a href="php/logout.php">Logout</a></li>
+				<li><a>Notifications: </a><li>
 				<h1><?php echo $_SESSION['username']; ?></h1>
 				<h1>Logged in as:</h1>
 				
 			</ul>
 		</nav>
-
-		
 
 		<h1>Submit Post</h1>
 		<form name="postSubmit" action="php/postSubmit.php" method="POST">
